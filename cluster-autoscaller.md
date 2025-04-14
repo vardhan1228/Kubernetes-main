@@ -29,8 +29,8 @@ This command provides information about the current node group, including its sc
 EKS worker nodes need proper IAM permissions to manage Auto Scaling Groups (ASG). Attach the **AmazonEKSClusterAutoscalerPolicy** to the IAM role of your worker nodes.
 
 ---
-
-### Install the helm in your server
+### **Step 3: Install Helm packge on server**  
+###  run this commnds for Install the helm 
 ```sh
 wget https://get.helm.sh/helm-v3.6.0-linux-amd64.tar.gz
 
@@ -41,9 +41,11 @@ sudo mv linux-amd64/helm /usr/local/bin/helm
 chmod 777 /usr/local/bin/helm  # give permissions
 
 ```
-### once open your auto scalling grop chek the max capacity if it is set to 2 plese increase into 5 to 10 as per your requirement
+### **Step 4: Autoscalling check and adjustment**  
 
-### **Step 3: Install Cluster Autoscaler using Helm**  
+### -- once open your auto scalling group and chek the max capacity if it is set to 2 please increase into 5 to 10 as per your requirement
+
+### **Step 5: Install Cluster Autoscaler using Helm**  
 Deploy Cluster Autoscaler using Helm, which simplifies the installation process.
 
 #### **Run the following commands:**
@@ -73,7 +75,7 @@ kubectl get pods -n kube-system | grep cluster-autoscaler
 
 ---
 
-### **Step 4: Deploy `apache` Application and Increase Replicas**
+### **Step 6: Deploy `apache` Application and Increase Replicas**
 Now, deploy a sample application (`apache`) and increase the replica count to test autoscaling.
 
 #### **Scale Up the Application**
@@ -85,7 +87,7 @@ kubectl scale deployment apache --replicas=50
 
 ---
 
-### **Step 5: Verify Logs and Autoscaler Behavior**
+### **Step 7: Verify Logs and Autoscaler Behavior**
 Monitor the logs of the deployment and ensure that autoscaling is happening.
 
 #### **Check Application Logs**
