@@ -30,7 +30,7 @@ EKS worker nodes need proper IAM permissions to manage Auto Scaling Groups (ASG)
 
 ---
 ### **Step 3: Install Helm packge on server**  
-###  run this commnds for Install the helm 
+###  **run this commnds for Install the helm:**
 ```sh
 wget https://get.helm.sh/helm-v3.6.0-linux-amd64.tar.gz
 
